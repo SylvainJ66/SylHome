@@ -8,7 +8,10 @@
 
     <ItemGroup>
       <Folder Include="Gateways.Repositories\Dapper" />
-      <Folder Include="Gateways.Repositories\InMemory" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Com.SylHome.Hexagon\Com.SylHome.Hexagon.csproj" />
     </ItemGroup>
 
 </Project>

@@ -7,10 +7,4 @@
         <RootNamespace>SylHome</RootNamespace>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Gateways.Repositories" />
-      <Folder Include="Models" />
-      <Folder Include="UseCases" />
-    </ItemGroup>
-
 </Project>
