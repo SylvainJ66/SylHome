@@ -7,12 +7,12 @@ public class LaunchCallForFundsCommandHandler
 {
     private readonly ICallForFundsRepository _callForFundsRepository;
     private readonly ICondominiumRepository _condominiumRepository;
-    private readonly DateTime _date;
+    private readonly DeterministicDateTime _date;
 
     public LaunchCallForFundsCommandHandler(
         ICallForFundsRepository callForFundsRepository, 
         ICondominiumRepository condominiumRepository, 
-        DateTime date)
+        DeterministicDateTime date)
     {
         _callForFundsRepository = callForFundsRepository;
         _condominiumRepository = condominiumRepository;

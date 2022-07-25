@@ -13,7 +13,7 @@ public class Condominium
 
     public decimal QuarterBudget() => Math.Ceiling(_yearlyBudget / 4);
 
-    public Quarter CurrentQuarter(DateTime date)
+    public Quarter CurrentQuarter(DeterministicDateTime date)
     {
         var quarterLimits = new List<DateTime>
         {
@@ -30,7 +30,7 @@ public class Condominium
         Quarter currentQuarter = quarters.ElementAt(0);
         for (int i = 0; i < quarterLimits.Count; i++)
         {
-            if (DateTime.Now > quarterLimits.ElementAt(i))
+            if (date.Now() >= quarterLimits.ElementAt(i))
             {
                 currentQuarter = quarters.ElementAt(i);
             }

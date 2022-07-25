@@ -20,16 +20,24 @@ public class CallForFunds
         return currentQuarter == _quarter;
     }
 
-    public bool Equal(object o)
+    private bool Equals(CallForFunds other)
     {
-        if (o == null) throw new ArgumentNullException(nameof(o));
-        if (this == o) return true;
-        if (this.GetType() != o.GetType()) return false;
-        CallForFunds that = (CallForFunds)o;
-        return _id == that._id &&
-               _condoId == that._condoId &&
-               _quarterAmount == that._quarterAmount &&
-               _quarter == that._quarter;
+        return _id.Equals(other._id) && 
+               _condoId.Equals(other._condoId) && 
+               _quarterAmount == other._quarterAmount && 
+               _quarter == other._quarter;
     }
-    
+
+    public override bool Equals(object? obj)
+    {
+        if (ReferenceEquals(null, obj)) return false;
+        if (ReferenceEquals(this, obj)) return true;
+        if (obj.GetType() != this.GetType()) return false;
+        return Equals((CallForFunds)obj);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(_id, _condoId, _quarterAmount, (int)_quarter);
+    }
 }

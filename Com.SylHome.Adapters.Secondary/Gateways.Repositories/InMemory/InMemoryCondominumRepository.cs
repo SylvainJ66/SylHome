@@ -3,7 +3,7 @@ using SylHome.Models;
 
 namespace Com.SylHome.Adapters.Secondary.Gateways.Repositories.InMemory;
 
-public class InMemoryCondominiumRepository : ICondominumRepository
+public class InMemoryCondominiumRepository : ICondominiumRepository
 {
     private readonly List<Condominium> _condominiums = new();
     
