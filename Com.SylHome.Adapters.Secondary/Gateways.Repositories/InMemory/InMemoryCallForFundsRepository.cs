@@ -13,4 +13,9 @@ public class InMemoryCallForFundsRepository : ICallForFundsRepository
 
     public bool HasCallBeenLauched(Quarter currentQuarter) => 
         _callsForFunds.Any(c => c.IsAbout(currentQuarter));
+
+    public void FeedWith(List<CallForFunds> callForFunds)
+    {
+        _callsForFunds.AddRange(callForFunds);
+    }
 }

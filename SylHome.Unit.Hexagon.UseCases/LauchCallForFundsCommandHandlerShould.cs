@@ -18,15 +18,102 @@ public class LauchCallForFundsCommandHandlerShould
     {
         _launchCallForFundsCommandHandler = new( _callForFundsRepository, _condominiumRepository, _date);
     }
-    
+
+    #region Condo_amount_changing
+
     [Fact]
     public void Launched_call_for_funds_for_a_given_amount()
     {
-        InitCondominium(12000);
         SetDateNow(new DateTime(2022, 1, 1));
+        InitCondominium(10000);
+        LaunchCallForFunds(_nexCallForFundId);
+        AsserCallsForFunds(new List<CallForFundsCriterion>{ new CallForFundsCriterion(
+            _nexCallForFundId, 2500, Quarter.First)});
+    }
+    
+    [Fact]
+    public void Launched_call_for_funds_for_a_another_amount()
+    {
+        SetDateNow(new DateTime(2022, 1, 1));
+        InitCondominium(12000);
         LaunchCallForFunds(_nexCallForFundId);
         AsserCallsForFunds(new List<CallForFundsCriterion>{ new CallForFundsCriterion(
             _nexCallForFundId, 3000, Quarter.First)});
+    }
+
+    #endregion
+
+    #region Quarter_changing
+
+    [Fact]
+    public void Launched_call_for_funds_for_a_given_quarter()
+    {
+        SetDateNow(new DateTime(2022, 1, 1));
+        InitCondominium(10000);
+        LaunchCallForFunds(_nexCallForFundId);
+        AsserCallsForFunds(new List<CallForFundsCriterion>{ new CallForFundsCriterion(
+            _nexCallForFundId, 2500, Quarter.First)});
+    }
+
+    [Fact]
+    public void Launched_call_for_funds_for_another_quarter()
+    {
+        SetDateNow(new DateTime(2022, 4, 1));
+        InitCondominium(10000);
+        LaunchCallForFunds(_nexCallForFundId);
+        AsserCallsForFunds(new List<CallForFundsCriterion>{ new CallForFundsCriterion(
+            _nexCallForFundId, 2500, Quarter.Second)});
+    }
+    
+    [Fact]
+    public void Launched_call_for_funds_for_third_quarter()
+    {
+        SetDateNow(new DateTime(2022, 7, 1));
+        InitCondominium(10000);
+        LaunchCallForFunds(_nexCallForFundId);
+        AsserCallsForFunds(new List<CallForFundsCriterion>{ new CallForFundsCriterion(
+            _nexCallForFundId, 2500, Quarter.Third)});
+    }
+    #endregion
+
+    [Fact]
+    public void Prevent_lauching_a_given_call_twice()
+    {
+        SetDateNow(new DateTime(2022, 1, 1));
+        InitCondominium(10400);
+        _callForFundsRepository.FeedWith(new List<CallForFunds>
+        {
+            new CallForFunds(
+                Guid.Parse("d7c68699-24e2-43a5-bb3d-be522628a1ec"),
+                _condominiumId,
+                2300,
+                Quarter.First)
+        });
+        Assert.Throws<Exception>(() => LaunchCallForFunds(_nexCallForFundId));
+        AsserCallsForFunds(new List<CallForFundsCriterion>{ new CallForFundsCriterion(
+            Guid.Parse("d7c68699-24e2-43a5-bb3d-be522628a1ec"), 2300, Quarter.First)});
+    }
+
+    [Fact]
+    public void Launch_the_next_call_for_funds_after_a_previous_one()
+    {
+        SetDateNow(new DateTime(2022, 1, 1));
+        InitCondominium(10400);
+        _callForFundsRepository.FeedWith(new List<CallForFunds>
+        {
+            new CallForFunds(
+                Guid.Parse("d7c68699-24e2-43a5-bb3d-be522628a1ec"),
+                _condominiumId,
+                2300,
+                Quarter.First)
+        });
+        SetDateNow(new DateTime(2022, 4, 1));
+        LaunchCallForFunds(_nexCallForFundId);
+        AsserCallsForFunds(new List<CallForFundsCriterion>{ new CallForFundsCriterion(
+            Guid.Parse("d7c68699-24e2-43a5-bb3d-be522628a1ec"), 2300, Quarter.First),
+            new CallForFundsCriterion(
+                Guid.Parse("510a9d8a-a6cb-453b-8652-2ce74a56b42c"), 2600, Quarter.Second)
+        });
     }
     
     private void InitCondominium(decimal yearlyAmount) 
