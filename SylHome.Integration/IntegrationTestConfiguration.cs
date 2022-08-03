@@ -1,6 +1,6 @@
 namespace SylHome.Integration;
 
-public class UnitTest1
+public class IntegrationTestConfiguration
 {
     [Fact]
     public void Test1()
