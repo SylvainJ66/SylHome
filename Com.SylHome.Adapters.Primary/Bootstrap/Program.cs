@@ -4,4 +4,5 @@ Console.WriteLine("Hello, World!");
 
 namespace Com.SylHome.Adapters.Primary.Bootstrap
 {
+    
 }

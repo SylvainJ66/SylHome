@@ -1,4 +1,5 @@
-namespace SylHome.Models;
+
+namespace SylHome.Hexagon.Models;
 
 public class Condominium
 {

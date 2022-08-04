@@ -2,5 +2,6 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=936283ef_002D73f9_002D43c5_002D8eed_002D1c8282c3b5fd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Launched_call_for_funds_for_a_given_amount" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::A154CF7E-50BE-476D-A2DA-522345A03A3E::net6.0::SylHome.Unit.Hexagon.UseCases.LauchCallForFundsCommandHandlerShould&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::2F77AFC7-1151-4EA8-975E-1605F6846262::net6.0::SylHome.Integration.IntegrationTestConfiguration.Can_save_a_callforfunds&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

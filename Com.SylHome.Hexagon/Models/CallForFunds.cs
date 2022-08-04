@@ -1,31 +1,31 @@
-namespace SylHome.Models;
+namespace SylHome.Hexagon.Models;
 
 public class CallForFunds
 {
-    private readonly Guid _id;
-    private readonly Guid _condoId;
-    private readonly decimal _quarterAmount;
-    private readonly Quarter _quarter;
+    public Guid Id { get; }
+    public Guid CondoId { get; }
+    public decimal QuarterAmount { get; }
+    public Quarter Quarter { get; }
 
     public CallForFunds(Guid id, Guid condoId, decimal quarterAmount, Quarter quarter)
     {
-        _id = id;
-        _condoId = condoId;
-        _quarterAmount = quarterAmount;
-        _quarter = quarter;
+        Id = id;
+        CondoId = condoId;
+        QuarterAmount = quarterAmount;
+        Quarter = quarter;
     }
 
     public bool IsAbout(Quarter currentQuarter)
     {
-        return currentQuarter == _quarter;
+        return currentQuarter == Quarter;
     }
 
     private bool Equals(CallForFunds other)
     {
-        return _id.Equals(other._id) && 
-               _condoId.Equals(other._condoId) && 
-               _quarterAmount == other._quarterAmount && 
-               _quarter == other._quarter;
+        return Id.Equals(other.Id) && 
+               CondoId.Equals(other.CondoId) && 
+               QuarterAmount == other.QuarterAmount && 
+               Quarter == other.Quarter;
     }
 
     public override bool Equals(object? obj)
@@ -38,6 +38,6 @@ public class CallForFunds
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(_id, _condoId, _quarterAmount, (int)_quarter);
+        return HashCode.Combine(Id, CondoId, QuarterAmount, (int)Quarter);
     }
 }

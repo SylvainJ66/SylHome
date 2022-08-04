@@ -1,9 +1,10 @@
-using SylHome.Models;
+using SylHome.Hexagon.Models;
 
-namespace SylHome.Gateways.Repositories;
+namespace SylHome.Hexagon.Gateways.Repositories;
 
 public interface ICallForFundsRepository
 {
     void Save(CallForFunds callForFunds);
     bool HasCallBeenLauched(Quarter currentQuarter);
+    CallForFunds ById(Guid callForFundsId);
 }

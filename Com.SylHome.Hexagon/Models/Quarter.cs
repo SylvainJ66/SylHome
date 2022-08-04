@@ -1,4 +1,4 @@
-namespace SylHome.Models;
+namespace SylHome.Hexagon.Models;
 
 public enum Quarter
 {

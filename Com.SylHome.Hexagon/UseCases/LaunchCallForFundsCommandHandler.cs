@@ -1,5 +1,5 @@
-using SylHome.Gateways.Repositories;
-using SylHome.Models;
+using SylHome.Hexagon.Gateways.Repositories;
+using SylHome.Hexagon.Models;
 
 namespace SylHome.UseCases;
 

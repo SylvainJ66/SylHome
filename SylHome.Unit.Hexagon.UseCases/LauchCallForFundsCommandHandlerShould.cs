@@ -1,5 +1,5 @@
 using Com.SylHome.Adapters.Secondary.Gateways.Repositories.InMemory;
-using SylHome.Models;
+using SylHome.Hexagon.Models;
 using SylHome.UseCases;
 
 namespace SylHome.Unit.Hexagon.UseCases;

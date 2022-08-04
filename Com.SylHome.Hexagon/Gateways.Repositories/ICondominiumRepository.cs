@@ -1,6 +1,6 @@
-using SylHome.Models;
+using SylHome.Hexagon.Models;
 
-namespace SylHome.Gateways.Repositories;
+namespace SylHome.Hexagon.Gateways.Repositories;
 
 public interface ICondominiumRepository
 {

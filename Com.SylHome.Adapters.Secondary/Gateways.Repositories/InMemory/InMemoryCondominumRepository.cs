@@ -1,6 +1,5 @@
-using SylHome.Gateways.Repositories;
-using SylHome.Models;
-
+using SylHome.Hexagon.Gateways.Repositories;
+using SylHome.Hexagon.Models;
 namespace Com.SylHome.Adapters.Secondary.Gateways.Repositories.InMemory;
 
 public class InMemoryCondominiumRepository : ICondominiumRepository

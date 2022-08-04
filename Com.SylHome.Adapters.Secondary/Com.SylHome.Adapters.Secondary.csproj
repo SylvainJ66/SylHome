@@ -7,11 +7,20 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Gateways.Repositories\Dapper" />
+      <Folder Include="Gateways.Repositories\Dapper\Condominium" />
+      <Folder Include="Gateways.Repositories\Dapper\Entities" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Com.SylHome.Hexagon\Com.SylHome.Hexagon.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="11.0.1" />
+      <PackageReference Include="Dapper" Version="2.0.123" />
+      <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0-preview.6.22324.4" />
+      <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
     </ItemGroup>
 
 </Project>

@@ -1,10 +1,11 @@
-using SylHome.Gateways.Repositories;
-using SylHome.Models;
+using SylHome.Hexagon.Gateways.Repositories;
+using SylHome.Hexagon.Models;
 
 namespace Com.SylHome.Adapters.Secondary.Gateways.Repositories.InMemory;
 
 public class InMemoryCallForFundsRepository : ICallForFundsRepository
 {
+    
     private readonly List<CallForFunds> _callsForFunds = new();
 
     public List<CallForFunds> GetCallsForFunds() => _callsForFunds;
@@ -14,8 +15,14 @@ public class InMemoryCallForFundsRepository : ICallForFundsRepository
     public bool HasCallBeenLauched(Quarter currentQuarter) => 
         _callsForFunds.Any(c => c.IsAbout(currentQuarter));
 
+    public CallForFunds ById(Guid callForFundsId)
+    {
+        throw new NotImplementedException();
+    }
+
     public void FeedWith(List<CallForFunds> callForFunds)
     {
         _callsForFunds.AddRange(callForFunds);
     }
+    
 }
