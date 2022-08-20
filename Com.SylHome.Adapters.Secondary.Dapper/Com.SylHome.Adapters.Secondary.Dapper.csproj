@@ -4,11 +4,12 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>Com.SylHome.Adapters.Secondary</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Gateways.Repositories\Dapper\Condominium" />
-      <Folder Include="Gateways.Repositories\Dapper\Entities" />
+      <Folder Include="Condominium" />
+      <Folder Include="Entities" />
     </ItemGroup>
 
     <ItemGroup>

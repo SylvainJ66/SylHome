@@ -22,7 +22,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Com.SylHome.Adapters.Secondary\Com.SylHome.Adapters.Secondary.csproj" />
+      <ProjectReference Include="..\Com.SylHome.Adapters.Secondary.Dapper\Com.SylHome.Adapters.Secondary.Dapper.csproj" />
+      <ProjectReference Include="..\Com.SylHome.Adapters.Secondary.InMemory\Com.SylHome.Adapters.Secondary.InMemory.csproj" />
     </ItemGroup>
 
 </Project>

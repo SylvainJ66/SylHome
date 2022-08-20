@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Com.SylHome.Adapters.Secondary\Com.SylHome.Adapters.Secondary.csproj" />
+      <ProjectReference Include="..\Com.SylHome.Adapters.Secondary.Dapper\Com.SylHome.Adapters.Secondary.Dapper.csproj" />
       <ProjectReference Include="..\Com.SylHome.Hexagon\Com.SylHome.Hexagon.csproj" />
     </ItemGroup>
 

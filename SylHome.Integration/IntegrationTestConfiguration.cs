@@ -1,4 +1,4 @@
-using Com.SylHome.Adapters.Secondary.Gateways.Repositories.Dapper.CallForFundsNameSpace;
+using Com.SylHome.Adapters.Secondary.CallForFunds;
 using SylHome.Hexagon.Gateways.Repositories;
 using SylHome.Hexagon.Models;
 
@@ -6,13 +6,13 @@ namespace SylHome.Integration;
 
 public class IntegrationTestConfiguration
 {
-    private readonly ICallForFundsRepository _repo;
+    private readonly DapperCallForFundsRepository _repo;
     private readonly Guid callForFundsId = Guid.Parse("d3c68699-24e2-43a5-bb3d-be522628a9ec");
     private readonly Guid CondoId = Guid.Parse("d6c68699-24e2-43a5-bb3d-be522628a9ec");
 
-    public IntegrationTestConfiguration(ICallForFundsRepository repo)
+    public IntegrationTestConfiguration()
     {
-        _repo = repo;
+        _repo = new DapperCallForFundsRepository();
     }
 
     [Fact]

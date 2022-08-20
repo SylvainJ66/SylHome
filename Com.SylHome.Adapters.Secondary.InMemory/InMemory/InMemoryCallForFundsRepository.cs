@@ -1,7 +1,7 @@
 using SylHome.Hexagon.Gateways.Repositories;
 using SylHome.Hexagon.Models;
 
-namespace Com.SylHome.Adapters.Secondary.Gateways.Repositories.InMemory;
+namespace Com.SylHome.Adapters.Secondary.InMemory.InMemory;
 
 public class InMemoryCallForFundsRepository : ICallForFundsRepository
 {

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Com.SylHome.Adapters.Primary</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Bootstrap" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0-preview.7.22375.6" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0-preview.7.22375.6" />
+      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0-preview.7.22375.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Com.SylHome.Adapters.Secondary.Dapper\Com.SylHome.Adapters.Secondary.Dapper.csproj" />
+    </ItemGroup>
+
+</Project>

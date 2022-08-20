@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using SylHome.Hexagon.Gateways.Repositories;
 using SylHome.Hexagon.Models;
 
-namespace Com.SylHome.Adapters.Secondary.Gateways.Repositories.Dapper.CallForFundsNameSpace;
+namespace Com.SylHome.Adapters.Secondary.CallForFunds;
 
 public class DapperCallForFundsRepository : ICallForFundsRepository
 {
@@ -20,7 +20,7 @@ public class DapperCallForFundsRepository : ICallForFundsRepository
         _connectionId = connectionId;
     }
 
-    public void Save(CallForFunds callForFunds)
+    public void Save(global::SylHome.Hexagon.Models.CallForFunds callForFunds)
     {
         using IDbConnection connection = new SqlConnection(_config.GetConnectionString(_connectionId));
         connection.Insert(
@@ -37,7 +37,7 @@ public class DapperCallForFundsRepository : ICallForFundsRepository
         return false;
     }
 
-    public CallForFunds ById(Guid callForFundsId)
+    public global::SylHome.Hexagon.Models.CallForFunds ById(Guid callForFundsId)
     {
         using IDbConnection connection = new SqlConnection(_config.GetConnectionString(_connectionId));
         
@@ -46,9 +46,9 @@ public class DapperCallForFundsRepository : ICallForFundsRepository
             new { id = callForFundsId.ToString() });
         
         var config = new MapperConfiguration(cfg => 
-            cfg.CreateMap<DapperCallForFunds, CallForFunds>());
+            cfg.CreateMap<DapperCallForFunds, global::SylHome.Hexagon.Models.CallForFunds>());
         
         var mapper = config.CreateMapper();
-        return mapper.Map<CallForFunds>(dapperCallForFunds.FirstOrDefault());
+        return mapper.Map<global::SylHome.Hexagon.Models.CallForFunds>(dapperCallForFunds.FirstOrDefault());
     }
 }

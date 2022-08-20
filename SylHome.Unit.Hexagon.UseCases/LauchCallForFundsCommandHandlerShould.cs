@@ -1,4 +1,4 @@
-using Com.SylHome.Adapters.Secondary.Gateways.Repositories.InMemory;
+using Com.SylHome.Adapters.Secondary.InMemory.InMemory;
 using SylHome.Hexagon.Models;
 using SylHome.UseCases;
 

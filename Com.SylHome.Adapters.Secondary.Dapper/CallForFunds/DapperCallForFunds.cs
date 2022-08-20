@@ -1,7 +1,6 @@
 using Dapper.Contrib.Extensions;
-using SylHome.Hexagon.Models;
 
-namespace Com.SylHome.Adapters.Secondary.Gateways.Repositories.Dapper.CallForFundsNameSpace;
+namespace Com.SylHome.Adapters.Secondary.CallForFunds;
 
 [Table("callforfunds")]
 public class DapperCallForFunds
